@@ -4,11 +4,11 @@ import './index.css';
 // import App from './App';
 import Second from './Second';
 import reportWebVitals from './reportWebVitals';
-import './tachyons';
 
 ReactDOM.render(
   <React.StrictMode>
     <Second greeting={'hello' + 'my name is aman'} />
+    <link rel="stylesheet" href="https://npmcdn.com/tachyons@4.0.0-beta.35/css/tachyons.min.css"></link>
 
   </React.StrictMode>,
   document.getElementById('root')
