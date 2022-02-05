@@ -4,6 +4,8 @@ import Searchbox from "../Components/Searchbox";
 import { Component } from "react";
 // import { RobotList } from "./RobotList";
 import Scroll from "../Components/Scroll";
+import './App.css';
+
 
 class App extends Component {
     constructor() {
@@ -32,7 +34,7 @@ class App extends Component {
         <h1 className="tc light-green">Umm, We are loading...</h1> :
         (
             <div className="tc">
-                <h1>ROBOFRIENDS</h1>
+                <h1 className="f1">ROBOFRIENDS</h1>
                 <Searchbox searchchange={this.onsearchchange}/>
                 <Scroll>
                     <Main RobotList={filteredRobots}/>
