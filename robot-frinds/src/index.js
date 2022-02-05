@@ -4,9 +4,9 @@ import './index.css';
 // import App from './App';
 // import Second from './Second';
 // import Card from './Card';
-import { RobotList } from './RobotList';
+// import { RobotList } from './RobotList';
 // import Main from './Main';
-import App from './App'
+import App from './Container/App'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(

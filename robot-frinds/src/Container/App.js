@@ -1,9 +1,9 @@
-import Main from "./Main";
-import Searchbox from "./Searchbox";
+import Main from "../Components/Main";
+import Searchbox from "../Components/Searchbox";
 // import { RobotList } from "./RobotList";
 import { Component } from "react";
 // import { RobotList } from "./RobotList";
-import Scroll from "./Scroll";
+import Scroll from "../Components/Scroll";
 
 class App extends Component {
     constructor() {
@@ -24,13 +24,13 @@ class App extends Component {
 
 
     render(){
-        const filteredRobots = this.state.RobotList.filter(robot =>{
-            return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+        const { RobotList, searchfield} = this.state;
+        const filteredRobots = RobotList.filter(robot =>{
+            return robot.name.toLowerCase().includes(searchfield.toLowerCase())
         })
-        if (this.state.RobotList.length === 0) {
-            return <h1 className="tc light-green">Umm, We are loading...</h1>
-        } else {
-            return (
+        return !RobotList.length ?
+        <h1 className="tc light-green">Umm, We are loading...</h1> :
+        (
             <div className="tc">
                 <h1>ROBOFRIENDS</h1>
                 <Searchbox searchchange={this.onsearchchange}/>
@@ -38,8 +38,7 @@ class App extends Component {
                     <Main RobotList={filteredRobots}/>
                 </Scroll>
             </div>
-    );
-        }
+        )
     }
 }   
 export default App;
